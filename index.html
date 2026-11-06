@@ -1,22 +1,24 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="ko">
+<head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pen</title>
-  </head>
-  <body>
+    <title>BMI 계산기</title>
+</head>
+<body>
 
-    <h1>BMI계산기</h1>
-    <div>
-    <label for="height">키(cm)</label>
-    <input type="text" id="height" placeholder="예:170">
+    <h1>BMI 계산기</h1>
+
+    <div class="input-box">
+        <label for="height">키(cm)</label>
+        <input type="number" id="height" placeholder="예:170">
     </div>
-    
-    <div>
-    <label for="weight">몸무게(kg)</label>
-    <input type="text" id="weight" placeholder="예:55">
+
+    <div class="input-box">
+        <label for="weight">몸무게(kg)</label>
+        <input type="number" id="weight" placeholder="예:55">
     </div>
 
     <button onclick="calculateBMI()">계산하기</button>
@@ -24,6 +26,35 @@
     <h2 id="result"></h2>
     <h3 id="state"></h3>
 
+    <!-- BMI 지수 바 -->
+    <div class="bmi-chart" id="bmiChart" hidden>
+
+        <div class="bmi-bar">
+
+            <div class="bmi-section under">저체중</div>
+            <div class="bmi-section normal">정상</div>
+            <div class="bmi-section warning">비만전단계</div>
+            <div class="bmi-section obesity1">1단계 비만</div>
+            <div class="bmi-section obesity2">2단계 비만</div>
+            <div class="bmi-section obesity3">3단계 비만</div>
+
+            <div class="bmi-pointer" id="bmiPointer"></div>
+
+        </div>
+
+        <div class="bmi-scale">
+            <span>0</span>
+            <span>18.5</span>
+            <span>23</span>
+            <span>25</span>
+            <span>30</span>
+            <span>35</span>
+            <span>40 이상</span>
+        </div>
+
+    </div>
+
     <script src="./script.js"></script>
-  </body>
+
+</body>
 </html>
